@@ -75,4 +75,4 @@ gem 'dotenv-rails', '~> 2.8'
 
 gem 'rubocop', '~> 1.54'
 
-gem "rspec-rails", "~> 6.0"
+gem 'rspec-rails', '~> 6.0'
