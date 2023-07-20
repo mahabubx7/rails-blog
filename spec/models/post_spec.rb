@@ -1,12 +1,12 @@
 require 'rails_helper'
 
 RSpec.describe Post, type: :model do
-  abel = User.new(name: 'Mahabub', photo: '_link_', bio: 'dev', posts_counter: 0)
+  mahabub = User.new(name: 'Mahabub', photo: '_link_', bio: 'dev', posts_count: 0)
   subject do
     Post.new(
       title: 'Ai take over the world',
       text: 'Ai take over the world by taking over the world',
-      author: abel
+      author: mahabub
     )
   end
 

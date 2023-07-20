@@ -38,7 +38,7 @@ RSpec.describe Comment, type: :model do
     user1 = User.create(
       name: 'Tom',
       photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-      bio: 'Teacher from Mexico.', posts_counter: 0
+      bio: 'Teacher from Mexico.', posts_count: 0
     )
     post1 = Post.create(author: user1, title: 'Hello', text: 'This is my first post', comment_counter: 0,
                         likes_counter: 0)

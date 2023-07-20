@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject { User.new(name: 'Mahabub', photo: '_link_', bio: 'developer', posts_counter: 0) }
+  subject { User.new(name: 'Mahabub', photo: '_link_', bio: 'developer', posts_count: 0) }
 
   before { subject.save }
 
@@ -15,12 +15,12 @@ RSpec.describe User, type: :model do
   end
 
   it 'should not allow non integer values' do
-    subject.posts_counter = 'hi'
+    subject.posts_count = 'hi'
     expect(subject).to_not be_valid
   end
 
   it 'post counter should be grater than or equal to 0' do
-    subject.posts_counter = -2
+    subject.posts_count = -2
     expect(subject).to_not be_valid
   end
 end
