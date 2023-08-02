@@ -112,6 +112,12 @@ To run the project, execute the following command:
 - Twitter: [@mahabub__7](https://twitter.com/mahabub__7)
 - LinkedIn: [in/mahabubx7](https://linkedin.com/in/mahabubx7)
 
+  👤 **Prince**
+
+- GitHub: [@prius2055](https://github.com/prius2055)
+- Twitter: [@prius2055](https://www.twitter.com/prius2055)
+- LinkedIn: [@prius2055](https://www.linkedin.com/in/princenwuke)
+
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 <!-- CONTRIBUTING -->
@@ -120,7 +126,7 @@ To run the project, execute the following command:
 
 > In the Future the project may include
 
-- [ ] **User Interface**
+- [X] **User Interface**
 - [ ] **Deployment online**
 
 ## 🤝 Contributing <a name="contributing"></a>
