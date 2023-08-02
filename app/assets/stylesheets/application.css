@@ -14,7 +14,7 @@
  *= require_self
  */
 
- .user {
+.user {
   border: 2px solid black;
   max-width: 600px;
   margin: 0 auto;
