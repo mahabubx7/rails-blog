@@ -38,3 +38,5 @@
 
 # Ignore nodejs stuffs
 node_modules/
+
+*.deb
