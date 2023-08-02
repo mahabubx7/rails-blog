@@ -1,48 +1,45 @@
 describe PostsController, type: :request do
   describe '#index' do
-    @user = User.create(
-      name: 'Tom',
-      photo: 'https://unsplash.com/photos/F_-0BxGuVvo',
-      bio: 'Teacher from Mexico.', posts_counter: 0
-    )
-
-    subject do
-      Post.create(author: @user, title: 'Hello', text: 'This is my first post', comments_counter: 0,
-                  likes_counter: 0)
+    before do
+      @user = User.create(name: 'Mahabub',
+                          photo: 'https://unsplash.com/photos/man-person-standing-between-tall-trees-F_-0BxGuVvo',
+                          bio: 'Software developer', posts_counter: 0)
+      @post = Post.create(title: 'post 1', text: 'First post', comments_counter: 0, likes_counter: 0, author: @user)
     end
 
-    before { subject.save }
+    it 'should render the post index' do
+      get "/users/#{@user.id}/posts"
 
-    it 'returns a successful response' do
-      get '/users/1/posts'
-      expect(response).to be_successful
-    end
-
-    it 'renders the index template' do
-      get '/users/1/posts'
-      expect(response).to render_template(:index)
-    end
-
-    it 'includes correct placeholder text in the response body' do
-      get '/users/1/posts'
-      expect(response.body).to include('Here is a list of all posts for a given user')
+      expect(response).to have_http_status(:success)
+      expect(response).to render_template('posts/index')
+      expect(response.body).to include("Post ##{@post.id}")
     end
   end
 
   describe '#show' do
+    before do
+      @user = User.create(name: 'Mahabub',
+                          photo: 'https://unsplash.com/photos/man-person-standing-between-tall-trees-F_-0BxGuVvo',
+                          bio: 'Software developer', posts_counter: 0)
+      @post = Post.create(title: 'post 1', text: 'First post', comments_counter: 0, likes_counter: 0, author: @user)
+    end
+
     it 'returns a successful response' do
-      get '/users/1/posts/1'
+      get "/users/#{@user.id}/posts/#{@post.id}"
       expect(response).to be_successful
     end
 
     it 'renders the show template' do
-      get '/users/1/posts/1'
+      get "/users/#{@user.id}/posts/#{@post.id}"
       expect(response).to render_template(:show)
     end
 
-    it 'includes correct placeholder text in the response body' do
-      get '/users/1/posts/1'
-      expect(response.body).to include('Here is a specific post for a single user')
+    it 'should render the post show' do
+      get "/users/#{@user.id}/posts/#{@post.id}"
+
+      expect(response).to have_http_status(:success)
+      expect(response).to render_template('posts/show')
+      expect(response.body).to include(@post.text)
     end
   end
 end
