@@ -14,90 +14,103 @@
  *= require_self
  */
 
-.u_container {
+.user {
+  border: 2px solid black;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-left: 25px;
+}
+
+.user-partial {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem;
+  margin-bottom: 5px;
+  margin-top: 30px;
 }
 
-.box {
-  border: solid 1px black;
+.user-partial img {
+  width: 150px;
+  height: 150px;
 }
 
-.img_container {
-  height: 100px;
-  width: 100px;
+.user-partial .users {
+  border: 1px solid black;
+  width: 400px;
+  margin-left: 15px;
 }
 
-.main_card {
+.user-name {
+  font-size: 24px;
+  padding-left: 10px;
+  margin-bottom: 0;
+}
+
+.user-id {
+  font-size: 24px;
+  padding-left: 10px;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+.user-post {
+  text-align: right;
+  padding-right: 10px;
+}
+
+.user-link {
+  cursor: pointer;
+  margin-bottom: 20px;
+  margin-top: 0;
+  text-align: center;
+  padding-top: 0;
+}
+
+.user-link a {
+  text-decoration: none;
+}
+
+.user-bio {
+  border: 1px solid black;
+  width: 550px;
+  margin-bottom: 15px;
+  padding-left: 10px;
+}
+
+.user-text {
+  border: 1px solid black;
+  width: 550px;
+  margin-bottom: 15px;
+  padding-left: 10px;
+}
+
+.user button {
+  margin-bottom: 15px;
+}
+
+.user a {
+  text-decoration: none;
+}
+
+.btn-paginate {
+  text-align: center;
+}
+
+.post-detail {
   display: flex;
   justify-content: space-between;
-  gap: 2rem;
-  height: 60px;
-  width: 50%;
-  padding: 1.3rem;
+  padding-right: 10px;
 }
 
-.user_title {
-  align-self: center;
-  padding: 0 0.5rem;
+.error {
+  color: red;
 }
 
-.post_count {
-  align-self: flex-end;
-  justify-self: flex-end;
-  margin-left: 5rem;
-  margin-right: 0.25rem;
+.user-textarea {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
-a {
-  color: black;
-  text-decoration: solid;
-}
-
-.info_container {
+.user-text-field {
   display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 1rem 10rem;
-  width: 66%;
-}
-
-.all_btn {
-  align-self: center;
-  width: max-content;
-  border: solid 1px black;
-}
-
-.ck_together {
-  align-self: flex-end;
-  justify-self: flex-end;
-  padding-right: 1rem;
-}
-
-.btn-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.posts_info {
-  display: flex;
-  justify-content: space-around;
-}
-
-.show_container {
-  margin: 2rem 4rem;
-}
-
-.comment_counter {
-  display: flex;
-  flex-direction: column;
-}
-
-.index_container {
-  width: 66%;
-  margin-left: 10rem;
+  margin-top: 15px;
+  margin-bottom: 15px;
 }

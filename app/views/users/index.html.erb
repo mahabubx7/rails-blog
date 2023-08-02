@@ -1,7 +1,7 @@
-<div>
-    <a href="/users/new/posts/new"> New Post</a>
-</div>
+<div class="user">
+  <% @users.each do |user| %>
 
-<% @users.each do |user| %>
-    <%= render partial: 'shared/user_profile', locals: { user: user } %>
-<% end %>
+    <%= render 'partials/user', user: user%>
+
+  <% end %>
+</div>

@@ -1,19 +1,28 @@
-<div class='show_container'>
-    <div class='box'>
-        <div class='posts_info'>
-            <p><%= @post.title%> by <%= @post.author.name%></p>
-            <p>Comments: <%= @post.comment_counter %> Likes: <%= @post.likes_counter %></p>
-        </div>
-        <p>
-            <%= @post.text%>
-        </p>
+<div class="user">
+
+ <div class='user-text'>
+    <div class='post-detail'>
+      <p>Post #<%=@post.id %> by <%=@post.author.name %></p>
+      <p>
+        Comments:<span><%= @post.comments_counter %></span>,
+        Likes: <span><%= @post.likes_counter %></span>
+      </p>
     </div>
-    <br />
-    <%= render 'shared/like' %>
-    <a href=<%="/users/id/posts/#{@post.id}/comments/new"%>>Comment</a>
-    <div class='box'>
-        <% @post.comments.each do |comment|%>
-            <p><%= comment.author.name%>: <%= comment.text %></p>    
-        <% end %>
-    </div>
+    <p><%=@post.text %></p>
+  </div>
+
+
+  <div class='user-text'>
+    <%@post.five_most_recent_comments.each do |postcomment| %>
+      <p>
+        <span><%= postcomment.author.name %></span>:
+        <span><%= postcomment.text %></span>
+      </p>
+    <% end %>
+  </div>
+
+
+  <a href='/users/<%= @user.id%>/posts/<%= @post.id%>/likes/new' ><button style="margin-left: 150px;">Like this post</button></a>
+  <a href='/users/<%= @user.id%>/posts/<%= @post.id%>/comments/new' ><button style="margin-left: 150px;">Add a comment</button></a>
+
 </div>
