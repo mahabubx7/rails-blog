@@ -17,7 +17,7 @@
       <p>
         <span><%= comment.author.name %></span>:
         <span><%= comment.text %></span>
-        <% if can? :destroy, @post %>
+        <% if can? :destroy, comment %>
           <%= form_with(model: @comment, url: user_post_comment_path(params[:user_id], @post), method: :delete, data: { confirm: "Are you sure?" }) do |form| %>
             <%= form.hidden_field :comment_info, value: "#{comment.id}" %>
             <%= form.submit "Destroy Comment" %>

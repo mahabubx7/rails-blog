@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  load_and_authorize_resource
   before_action :authenticate_user!, except: %i[index show]
 
   def index
@@ -16,20 +17,15 @@ class PostsController < ApplicationController
   end
 
   def create
-    if current_user
-      @post = Post.new(post_params)
-      @post.author_id = current_user.id
-      @post.likes_counter = 0
-      @post.comments_counter = 0
+    @post = Post.new(post_params)
+    @post.author = current_user
+    @post.likes_counter = 0
+    @post.comments_counter = 0
 
-      if @post.save
-        redirect_to users_path
-      else
-        render :new
-      end
-
+    if @post.save
+      redirect_to user_posts_path(current_user)
     else
-      redirect_to new_user_session_path, notice: 'You are not logged in.'
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -44,6 +40,16 @@ class PostsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  # def destroy
+  #   @post = Post.find_by_id(params[:id])
+  #   @user = @post.author
+  #   @post.likes.destroy_all
+  #   @post.comments.destroy_all
+  #   @post.destroy
+
+  #   redirect_to user_posts_path(@user) if @user.save
+  # end
 
   private
 
