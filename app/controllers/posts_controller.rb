@@ -23,7 +23,7 @@ class PostsController < ApplicationController
       @post.comments_counter = 0
 
       if @post.save
-        redirect_to "/users/#{params[:user_id]}/posts"
+        redirect_to users_path
       else
         render :new
       end
