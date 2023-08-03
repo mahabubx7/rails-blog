@@ -13,14 +13,25 @@
 
 
   <div class='user-text'>
-    <%@post.five_most_recent_comments.each do |postcomment| %>
+    <%@post.five_most_recent_comments.each do |comment| %>
       <p>
-        <span><%= postcomment.author.name %></span>:
-        <span><%= postcomment.text %></span>
+        <span><%= comment.author.name %></span>:
+        <span><%= comment.text %></span>
+        <% if can? :destroy, comment %>
+          <%= form_with(model: @comment, url: user_post_comment_path(params[:user_id], @post), method: :delete, data: { confirm: "Are you sure?" }) do |form| %>
+            <%= form.hidden_field :comment_info, value: "#{comment.id}" %>
+            <%= form.submit "Destroy Comment" %>
+          <% end %>
+        <% end %>
       </p>
     <% end %>
   </div>
 
+  <% if can? :destroy, @post %>
+    <%= form_with(model: @post, url: user_post_path(params[:user_id], @post), method: :delete, data: { confirm: "Are you sure?" }) do |form| %>
+      <%= form.submit "Destroy Post" %>
+    <% end %>
+  <% end %>
 
   <a href='/users/<%= @user.id%>/posts/<%= @post.id%>/likes/new' ><button style="margin-left: 150px;">Like this post</button></a>
   <a href='/users/<%= @user.id%>/posts/<%= @post.id%>/comments/new' ><button style="margin-left: 150px;">Add a comment</button></a>
