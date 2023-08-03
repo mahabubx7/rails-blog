@@ -1,4 +1,8 @@
 <div class="user">
+  <div>
+      <a href="/users/new/posts/new"> New Post</a>
+  </div>
+
   <% @users.each do |user| %>
 
     <%= render 'partials/user', user: user%>

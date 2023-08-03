@@ -60,10 +60,11 @@ After you're finished please remove all the comments and instructions!
 
 ### Key Features <a name="key-features"></a>
 
-- **[Abstraction]**
-- **[Encapsulation]**
-- **[Inheritance]**
-- **[polymorphism]**
+ **[Controllers for users and post models]**
+  **[Unit spec test for all request]**
+   **[Views to see actions on the blog]**
+   **[Form to add new users]**
+   
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 

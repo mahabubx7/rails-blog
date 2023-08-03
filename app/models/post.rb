@@ -7,10 +7,7 @@ class Post < ApplicationRecord
   validates :comments_counter, comparison: { greater_than_or_equal_to: 0 }
   validates :likes_counter, comparison: { greater_than_or_equal_to: 0 }
 
-  before_save do
-    user = User.find_by(id: author.id)
-    user.increment!(:posts_counter)
-  end
+  before_save -> { User.find_by(id: author.id).increment!(:posts_counter) }
 
   def five_most_recent_comments
     comments.order(created_at: :desc).limit(5)
