@@ -60,12 +60,14 @@ After you're finished please remove all the comments and instructions!
 
 ### Key Features <a name="key-features"></a>
 
-**[Controllers for users and post models]**
-**[Unit spec test for all request]**
-**[Views to see actions on the blog]**
-**[Form to add new users]**
-**[Authorization for deleting users post]**
-**[Authorization for deleting users comment]**
+- **[Controllers for users and post models]**
+- **[Unit spec test for all request]**
+- **[Views to see actions on the blog]**
+- **[Form to add new users]**
+- **[Authorization for deleting users post]**
+- **[Authorization for deleting users comment]**
+- **[User Interface]**
+- **[API Endpoint]**
    
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -128,8 +130,6 @@ To run the project, execute the following command:
 ## 🔭 Future Features <a name="future-features"></a>
 
 > In the Future the project may include
-
-- [X] **User Interface**
 - [ ] **Deployment online**
 
 ## 🤝 Contributing <a name="contributing"></a>
