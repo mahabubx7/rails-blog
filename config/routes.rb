@@ -4,7 +4,17 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root "users#index"
+
+  namespace :api do
+    namespace :v1 do
+      post :auth, to: 'authentication#create'
+      resources :users, only: [] do
+        resources :posts, only: [:index] do
+          resources :comments, only: [:index, :create]
+        end
+      end
+    end
+  end
 
   resources :users, only:[:index, :show] do
     resources :posts, only:[:index, :new, :show, :create, :destroy] do
@@ -12,4 +22,6 @@ Rails.application.routes.draw do
       resources  :likes, only:[:new, :create]
     end
   end
+
+  root "users#index"
 end
