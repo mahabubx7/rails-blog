@@ -1,0 +1,16 @@
+<div class="user">
+  <div class="action_nav">
+      <a href="/users/new/posts/new"> New Post</a>
+      <% if user_signed_in? %>
+        <%= button_to "logout", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= button_to "login", new_user_session_path, method: :get %>
+      <% end %>
+  </div>
+
+  <% @users.each do |user| %>
+
+    <%= render 'partials/user', user: user%>
+
+  <% end %>
+</div>

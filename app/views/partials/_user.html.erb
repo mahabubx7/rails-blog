@@ -1,0 +1,21 @@
+  <%= link_to user_path(user) do %>
+
+<div class='user-partial' >
+
+<img src= '<%=user.photo %>' alt= 'user <%=user.name %>'/>
+
+  <div class = 'users'>
+    <p class='user-name'><%= user.name %></p>
+    <p class='user-name'>Email: <%= user.email %></p>
+    <p class='user-id'>(user id: <%= user.id %>)</p>
+
+    <p class='user-post'>
+      Number of post: <%=user.posts_counter %>
+    </p>
+
+
+  </div>
+
+</div>
+
+ <% end %>
