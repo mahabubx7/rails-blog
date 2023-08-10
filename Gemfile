@@ -80,3 +80,7 @@ gem 'devise', '~> 4.9'
 gem 'cancancan', '~> 3.5'
 
 gem 'jwt', '~> 2.7'
+
+gem 'rswag', '~> 2.10'
+
+gem 'rswag-specs', '~> 2.10'
